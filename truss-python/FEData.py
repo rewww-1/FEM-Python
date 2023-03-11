@@ -56,6 +56,6 @@ K     = np.array([[]])
 f     = np.array([[]])
 d     = np.array([[]])
 
-plot_truss = False
-plot_node  = False
-plot_tex   = False
+plot_truss = True
+plot_node  = True
+plot_tex   = True

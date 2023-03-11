@@ -21,6 +21,13 @@ import FEData as model
 from TrussElem import TrussElem
 from PrePost import create_model_json, print_stress
 from utitls import assembly, solvedr
+import numpy as np
+import matplotlib
+matplotlib.use('TkAgg')
+
+import matplotlib.pyplot as plt
+
+
 
 def FERun(DataFile):
     # create FE model from DataFile in json format
@@ -30,12 +37,15 @@ def FERun(DataFile):
     for e in range(model.nel):
         ke = TrussElem(e)
         assembly(e, ke)
-    
+   
     # Partition and solution
     solvedr()
-
+   
     # Postprocessing
     print_stress()
+
+
+
 
 
 if __name__ == "__main__":
@@ -47,3 +57,4 @@ if __name__ == "__main__":
         exit()
 
     FERun(DataFile)
+    
